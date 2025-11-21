@@ -1,0 +1,28 @@
+/***** Settings *****/
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Colors */
+/* Body */
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Main */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/***** Footer *****/
+.footer {
+  background-color: #353535;
+}
