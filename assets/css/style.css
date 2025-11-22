@@ -6,14 +6,17 @@
 }
 
 /* Colors */
+/* Borders */
 /* Body */
 body {
   font-family: "Roboto", sans-serif;
+}
+body .main-container {
+  box-sizing: border-box;
+  min-width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box;
-  min-width: 375px;
 }
 body a {
   text-decoration: none;
@@ -22,11 +25,29 @@ body li {
   list-style: none;
 }
 
-/* Main */
-.main {
+/***** Section Restaurant *****/
+.restaurants {
+  background-color: #F3F3F3;
+}
+.restaurants .resto-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.restaurants .resto-container .resto-card {
+  width: 340px;
+  height: 251px;
+}
+.restaurants .resto-container .resto-card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 175px;
+  border-radius: 15px 15px 0 0;
+}
+.restaurants .resto-container .resto-card-content {
+  background-color: #FFFFFF;
+  border-radius: 0 0 15px 15px;
 }
 
 /***** Footer *****/
