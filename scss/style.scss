@@ -20,6 +20,20 @@ $border-radius-global: 15px;
 $border-radius-top: 15px 15px 0 0;
 $border-radius-bottom: 0 0 15px 15px;
 
+/* Typography */
+$content-weight: 300;
+$title-weight: 700;
+
+/* Button */
+@mixin button {
+    padding: 20px;
+    border: none;
+    background: linear-gradient($secondary, $primary);
+    border-radius: 40px;
+    color: white;
+    font-size: 16px;
+}
+
 /* Body */
 body {
     font-family: 'Roboto', sans-serif;
@@ -38,6 +52,63 @@ body {
 
     li {
         list-style: none;
+    }
+
+    h2 {
+        font-weight: $title-weight;
+    }
+
+    p {
+        font-weight: $content-weight;
+    }
+
+    .btn {
+        margin : 30px 0 60px 0;
+        @include button;
+    }
+}
+
+
+/***** Header *****/
+.header {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        padding: 15px;
+    }
+
+    .location {
+        background-color: $medium-gray;
+        padding: 30px 65px;
+        width: 100%;
+        gap: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fa-location-dot {
+        color: #000000;
+    }
+}
+
+
+/***** Hero *****/
+.hero {
+    padding: 25px;
+    text-align: center;
+    background-color: $light-gray;
+
+    h2 {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    p {
+        font-size: 18px;
     }
 }
 
