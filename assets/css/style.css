@@ -33,12 +33,12 @@ body p {
   font-weight: 300;
 }
 body .btn {
-  margin: 30px 0 60px 0;
+  margin: 30px 0;
   padding: 20px;
   border: none;
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 40px;
-  color: white;
+  color: #FFFFFF;
   font-size: 16px;
 }
 
@@ -79,7 +79,49 @@ body .btn {
   font-size: 18px;
 }
 
-/***** Section Restaurant *****/
+/***** Functioning Section *****/
+.functioning {
+  margin: 30px 15px;
+}
+.functioning > h2 {
+  padding: 30px 0;
+}
+.functioning .functioning-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.functioning .functioning-square {
+  display: flex;
+  align-items: center;
+}
+.functioning .functioning-square .number {
+  padding: 5px 10px;
+  background-color: #9356DC;
+  border-radius: 15px;
+  color: #FFFFFF;
+  font-weight: 500;
+}
+.functioning .functioning-square .functioning-content {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  background-color: #F3F3F3;
+  padding: 25px 40px;
+  border-radius: 25px;
+}
+.functioning .functioning-square .fa-solid {
+  font-size: 1.2rem;
+}
+.functioning .functioning-square .fa-mobile-screen-button,
+.functioning .functioning-square .fa-list {
+  color: #7E7E7E;
+}
+.functioning .functioning-square .fa-store {
+  color: #9356DC;
+}
+
+/*****  Restaurant Section *****/
 .restaurants {
   background-color: #F3F3F3;
 }

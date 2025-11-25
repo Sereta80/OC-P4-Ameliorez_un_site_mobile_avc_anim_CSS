@@ -10,9 +10,10 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
-$light-gray: #F3F3F3;
-$medium-gray: #EAEAEA;
-$bg-white: #FFFFFF;
+$very-light-gray: #F3F3F3;
+$light-gray: #EAEAEA;
+$medium-gray: #7E7E7E;
+$white: #FFFFFF;
 $bg-footer: #353535;
 
 /* Borders */
@@ -30,7 +31,7 @@ $title-weight: 700;
     border: none;
     background: linear-gradient($secondary, $primary);
     border-radius: 40px;
-    color: white;
+    color: $white;
     font-size: 16px;
 }
 
@@ -63,7 +64,7 @@ body {
     }
 
     .btn {
-        margin : 30px 0 60px 0;
+        margin : 30px 0;
         @include button;
     }
 }
@@ -81,7 +82,7 @@ body {
     }
 
     .location {
-        background-color: $medium-gray;
+        background-color: $light-gray;
         padding: 30px 65px;
         width: 100%;
         gap: 15px;
@@ -100,7 +101,7 @@ body {
 .hero {
     padding: 25px;
     text-align: center;
-    background-color: $light-gray;
+    background-color: $very-light-gray;
 
     h2 {
         margin-bottom: 15px;
@@ -113,9 +114,59 @@ body {
 }
 
 
-/***** Section Restaurant *****/
+/***** Functioning Section *****/
+.functioning {
+    margin: 30px 15px;
+
+    & > h2 {
+        padding: 30px 0;
+    }
+
+    .functioning-container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .functioning-square {
+        display: flex;
+        align-items: center;
+
+        .number {
+            padding: 5px 10px;
+            background-color: $primary;
+            border-radius: 15px;
+            color: $white;
+            font-weight: 500;
+        }
+
+        .functioning-content {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            background-color: $very-light-gray;
+            padding: 25px 40px;
+            border-radius: 25px;
+        }
+
+        .fa-solid {
+            font-size: 1.2rem;
+        }
+
+        .fa-mobile-screen-button,
+        .fa-list {
+            color: $medium-gray;
+        }
+
+        .fa-store {
+            color: $primary;
+        }
+    }
+}
+
+/*****  Restaurant Section *****/
 .restaurants {
-    background-color: $light-gray;
+    background-color: $very-light-gray;
 
     .resto-container {
         display: flex;
@@ -135,7 +186,7 @@ body {
         }
 
         .resto-card-content {
-            background-color: $bg-white;
+            background-color: $white;
             border-radius: $border-radius-bottom;
         }
     }
