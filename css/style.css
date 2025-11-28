@@ -109,11 +109,6 @@ body .btn {
   background-color: #F3F3F3;
   padding: 25px 40px;
   border-radius: 25px;
-  width: 240px;
-
-  p {
-    font-weight: 500;
-  }
 }
 .functioning .functioning-square .fa-solid {
   font-size: 1.2rem;
@@ -140,8 +135,7 @@ body .btn {
   height: 251px;
 }
 .restaurants .resto-container .resto-card img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 175px;
   border-radius: 15px 15px 0 0;
@@ -155,3 +149,5 @@ body .btn {
 .footer {
   background-color: #353535;
 }
+
+/*# sourceMappingURL=style.css.map */
