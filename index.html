@@ -21,10 +21,14 @@
     <div class="main-container">
         <header class="header">
             <img src="./assets/images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">
-            <div class="location">
+            <!-- <div class="location">
                     <i class="fa-solid fa-location-dot"></i>
                     <p>Paris, Belleville</p>
-                </div>
+                </div> -->
+            <form method="get" action="" class="location-search">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="search" placeholder="Paris, Belleville">
+                </form>
         </header>
         <main class="main">
             <section class="hero">
@@ -69,26 +73,29 @@
                 <div class="resto-container">
                     <article class="resto-card">
                         <img src="./assets/images/restaurants/jay-wennington.jpg" alt="Plat au restaurant La palette du goût">
+                        <p class="tag-new">Nouveau</p>
                         <div class="resto-card-content">
                             <div class="resto-card-text">
                                 <h4>La palette du goût</h4>
                                 <p>Ménilmontant</p>
                             </div>
                             <div class="favori">
-                                <i class="fa-thin fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                             </div>
                         </div>
                     </article>
                     <article class="resto-card">
                         <img src="./assets/images/restaurants/stil.jpg" alt="Plat au restaurant La note enchantée">
+                        <p class="tag-new">Nouveau</p>
                         <div class="resto-card-content">
                             <div class="resto-card-text">
                                 <h4>La note enchantée</h4>
                                 <p>Charonne</p>
                             </div>
                             <div class="favori">
-                                <i class="fa-solid fa-heart filters-icons"></i>
-                                <!-- Le coeur devra être violet -->
+                                <!-- <img src="/assets/images/heart-icon.svg" alt="Icône coeur en dégradé violet-rose" class="favorite-heart"> -->
+                                <i class="fa-solid fa-heart"></i>
+                                <!-- Le coeur devra être en dégradé rose à violet -->
                             </div>
                         </div>
                     </article>
@@ -100,7 +107,7 @@
                                 <p>Cité Rouge</p>
                             </div>
                             <div class="favori">
-                                <i class="fa-thin fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                             </div>
                         </div>
                     </article>
@@ -112,7 +119,7 @@
                                 <p>Folie-Méricourt</p>
                             </div>
                             <div class="favori">
-                                <i class="fa-thin fa-heart"></i>
+                                <i class="fa-regular fa-heart"></i>
                             </div>
                         </div>
                     </article>
@@ -120,7 +127,8 @@
             </section>
         </main>
         <footer class="footer">
-            <img src="./assets/images/logo/ohmyfood.png" alt="Logo ohmyfood">
+            <!-- <img src="./assets/images/logo/ohmyfood.png" alt="Logo ohmyfood"> -->
+            <h3>ohmyfood</h3>
             <ul>
                 <li>
                     <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>

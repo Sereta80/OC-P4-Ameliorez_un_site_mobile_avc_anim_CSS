@@ -60,6 +60,7 @@ body .btn {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: -10px;
 }
 .header .fa-location-dot {
   color: #000000;
@@ -90,10 +91,12 @@ body .btn {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  padding-left: 15px;
 }
 .functioning .functioning-square {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .functioning .functioning-square .number {
   padding: 5px 10px;
@@ -101,6 +104,9 @@ body .btn {
   border-radius: 15px;
   color: #FFFFFF;
   font-weight: 500;
+  position: absolute;
+  top: 22px;
+  left: -14px;
 }
 .functioning .functioning-square .functioning-content {
   display: flex;
@@ -108,7 +114,11 @@ body .btn {
   align-items: center;
   background-color: #F3F3F3;
   padding: 25px 40px;
-  border-radius: 25px;
+  border-radius: 20px;
+  width: 240px;
+  height: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 .functioning .functioning-square .fa-solid {
   font-size: 1.2rem;
