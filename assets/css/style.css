@@ -18,7 +18,6 @@ body .main-container {
   min-width: 375px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 body a {
   text-decoration: none;
@@ -60,12 +59,10 @@ body .btn {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
   transition: 0.3s;
 }
 .header .location-search input {
-  width: 50%;
   border: none;
   background-color: transparent;
   font-size: 16px;
@@ -101,7 +98,7 @@ body .btn {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding-left: 15px;
+  align-items: center;
 }
 .functioning .functioning-square {
   display: flex;
@@ -219,8 +216,9 @@ body .btn {
 /***** Footer *****/
 .footer {
   background-color: #353535;
-  padding: 20px;
   width: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 .footer h3,
 .footer a {
