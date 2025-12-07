@@ -32,9 +32,12 @@ body p {
   font-weight: 300;
 }
 body .btn {
-  margin: 30px 0;
-  padding: 20px;
-  border: none;
+  padding: 15px 20px;
+  margin: 30px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 40px;
   color: #FFFFFF;
@@ -55,7 +58,7 @@ body .btn {
 }
 .header .location-search {
   background-color: #EAEAEA;
-  padding: 20px 65px;
+  padding: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -78,6 +81,9 @@ body .btn {
   padding: 25px;
   text-align: center;
   background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero h2 {
   margin-bottom: 15px;
@@ -161,6 +167,8 @@ body .btn {
   width: 340px;
   height: 251px;
   position: relative;
+  background-color: #FFFFFF;
+  border-radius: 15px;
 }
 .restaurants .resto-container .resto-card img {
   -o-object-fit: cover;
@@ -182,35 +190,33 @@ body .btn {
   right: 12px;
   top: 15px;
 }
-.restaurants .resto-container .resto-card-content {
-  background-color: #FFFFFF;
-  border-radius: 0 0 15px 15px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.restaurants .resto-container .resto-card-content h4 {
-  font-size: 18px;
-}
-.restaurants .resto-container .resto-card-content p {
-  font-size: 17px;
-}
-.restaurants .resto-container .resto-card-content .resto-card-text {
-  line-height: 22px;
-}
-.restaurants .resto-container .resto-card-content .favori {
-  padding: 5px 10px;
-}
-.restaurants .resto-container .resto-card-content .fa-heart {
+.restaurants .resto-container .resto-card .favori {
+  position: absolute;
+  right: 20px;
+  bottom: 25px;
   font-size: 25px;
+  cursor: pointer;
 }
-.restaurants .resto-container .resto-card-content .fa-solid.fa-heart {
+.restaurants .resto-container .resto-card .fa-solid.fa-heart {
   display: inline-block;
   background: linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.restaurants .resto-container .resto-card-content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.restaurants .resto-container .resto-card-content h4 {
+  font-size: 18px;
+  color: #000000;
+}
+.restaurants .resto-container .resto-card-content p {
+  font-size: 17px;
+  color: #000000;
 }
 
 /***** Footer *****/
