@@ -30,7 +30,7 @@
             <section class="hero">
                 <h2>Réservez le menu qui vous convient</h2>
                 <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
-                <a href="#" class="btn">Explorez nos restaurants</a>
+                <a href="#restaurants" class="btn">Explorez nos restaurants</a>
             </section>
             <section class="functioning">
                 <h2>Fonctionnement</h2>
@@ -65,7 +65,7 @@
                 </div>
             </section>
             <section class="restaurants">
-                <h2>Restaurants</h2>
+                <h2 id="restaurants">Restaurants</h2>
                 <div class="resto-container">
                     <article class="resto-card">
                         <a href="#">
@@ -76,10 +76,12 @@
                                 <p>Ménilmontant</p>
                             </div>
                         </a>
-                        <i class="fa-regular fa-heart favori"></i>
-                        <!-- <div class="favori">
-                            <i class="fa-regular fa-heart"></i>
-                        </div> -->
+                        <!-- <i class="fa-regular fa-heart favorite"></i> -->
+                        <div class="favorite-container">
+                            <input type="checkbox" id="favorite-1" class="favorite-checkbox">
+                            <label for="favorite-1" class="favorite-label">
+                                <i class="fa-regular fa-heart"></i>
+                            </label>
                     </article>
                     <article class="resto-card">
                         <a href="#">
@@ -90,7 +92,14 @@
                                 <p>Charonne</p>
                             </div>
                         </a>
-                        <i class="fa-solid fa-heart favori"></i> <!-- Le coeur est en dégradé rose à violet -->
+                        <!-- <i class="fa-solid fa-heart favori"></i> Le coeur est en dégradé rose à violet -->
+                        <!-- <i class="fa-regular fa-heart favori"></i> -->
+                        <div class="favorite-container">
+                            <input type="checkbox" id="favorite-2" class="favorite-checkbox">
+                            <label for="favorite-2" class="favorite-label">
+                                <i class="fa-regular fa-heart"></i> <!-- <i class="fa-solid fa-heart"></i> -->
+                            </label>
+                        </div>
                     </article>
                     <article class="resto-card">
                         <a href="#">
@@ -100,7 +109,7 @@
                                     <p>Cité Rouge</p>
                                 </div>
                         </a>
-                        <i class="fa-regular fa-heart favori"></i>
+                        <i class="fa-regular fa-heart favorite"></i>
                     </article>
                     <article class="resto-card">
                         <a href="#">
@@ -110,7 +119,7 @@
                                 <p>Folie-Méricourt</p>
                             </div>
                         </a>
-                        <i class="fa-regular fa-heart favori"></i>
+                        <i class="fa-regular fa-heart favorite"></i>
                     </article>
                 </div>
             </section>

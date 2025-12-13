@@ -1,4 +1,5 @@
 /***** Settings *****/
+@use 'sass:color';
 
 /* Reset */
 * {
@@ -17,6 +18,7 @@ $medium-gray: #7E7E7E;
 $white: #FFFFFF;
 $black: #000000;
 $bg-footer: #353535;
+$bg-button: linear-gradient($secondary, $primary);
 
 /* Borders */
 $border-radius-global: 15px;
@@ -34,12 +36,21 @@ $title-weight: 700;
     width: fit-content;
     display: flex;
     justify-content: center;
-    background: linear-gradient($secondary, $primary);
+    background: $bg-button;
     border-radius: 40px;
     color: $white;
     font-size: 16px;
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+}
+
+/* Favorite style */
+@mixin fav-style {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.4rem;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Body */
@@ -51,7 +62,6 @@ body {
         min-width: 375px;
         display: flex;
         flex-direction: column;
-        // align-items: center;
     }
 
     a {
@@ -72,6 +82,13 @@ body {
 
     .btn {
         @include button;
+
+        &:hover {
+            // background: linear-gradient(lighten($secondary, 3%), lighten($primary, 3%)); n'est plus utilisé
+            background: linear-gradient(color.adjust($secondary, $lightness: 3%), color.adjust($primary, $lightness: 3%));
+            box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3);
+            transition: 0.5s;
+        }
     }
 }
 
@@ -241,22 +258,51 @@ body {
                 top: 15px;
             }
 
-            .favori {
-                position: absolute;
-                right: 20px;
-                bottom: 25px;
-                font-size: 25px;
-                cursor: pointer;
-                // `font-weight: bold` permet de remplir les icônes en couleur
-            }
+            // .favorite {
+            //     position: absolute;
+            //     right: 20px;
+            //     bottom: 25px;
+            //     font-size: 25px;
+            //     cursor: pointer;
+            //     // `font-weight: bold;` permet de remplir les icônes en couleur
 
+            //     &:active {
+            //         font-weight: bold;
+            //         display: inline-block;
+            //         background: linear-gradient($primary, $secondary);
+            //         background-clip: text;
+            //         -webkit-background-clip: text;
+            //         -webkit-text-fill-color: transparent;
+            //     }
+            // }
 
-            .fa-solid.fa-heart {
-                display: inline-block;
-                background: linear-gradient($primary, $secondary);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+            // .fa-solid.fa-heart {
+            //     display: inline-block;
+            //     background: linear-gradient($primary, $secondary);
+            //     background-clip: text;
+            //     -webkit-background-clip: text;
+            //     -webkit-text-fill-color: transparent;
+            // }
+
+            .favorite-container {
+                @include fav-style;
+
+                .favorite-checkbox {
+                    // display: none;
+                }
+
+                &::after {
+                    .favorite-label:checked {
+                        content: "";
+                        @include fav-style;
+                        font-weight: bold;
+                        display: inline-block;
+                        background: linear-gradient($primary, $secondary);
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
             }
         }
 
@@ -275,10 +321,6 @@ body {
                 font-size: 17px;
                 color: $black;
             }
-
-            // .resto-card-text {
-            //     line-height: 22px;
-            // }
         }
     }
 }
