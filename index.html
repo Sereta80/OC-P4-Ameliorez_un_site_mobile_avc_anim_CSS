@@ -15,10 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- CSS Compilé-->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
     <div class="main-container">
+        <div class="loader-container">
+            <div class="loader">
+                <div class="inner-circle">
+                    <i class="fa-solid fa-bell-concierge"></i>
+                </div>
+            </div>
+        </div>
         <header class="header">
             <img src="./assets/images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood">
             <form method="get" action="" class="location-search">
@@ -76,12 +83,12 @@
                                 <p>Ménilmontant</p>
                             </div>
                         </a>
-                        <!-- <i class="fa-regular fa-heart favorite"></i> -->
                         <div class="favorite-container">
                             <input type="checkbox" id="favorite-1" class="favorite-checkbox">
                             <label for="favorite-1" class="favorite-label">
                                 <i class="fa-regular fa-heart"></i>
                             </label>
+                        </div>
                     </article>
                     <article class="resto-card">
                         <a href="#">
@@ -92,12 +99,11 @@
                                 <p>Charonne</p>
                             </div>
                         </a>
-                        <!-- <i class="fa-solid fa-heart favori"></i> Le coeur est en dégradé rose à violet -->
-                        <!-- <i class="fa-regular fa-heart favori"></i> -->
+                        <!-- Le coeur est en dégradé rose à violet -->
                         <div class="favorite-container">
                             <input type="checkbox" id="favorite-2" class="favorite-checkbox">
                             <label for="favorite-2" class="favorite-label">
-                                <i class="fa-regular fa-heart"></i> <!-- <i class="fa-solid fa-heart"></i> -->
+                                <i class="fa-regular fa-heart"></i>
                             </label>
                         </div>
                     </article>
@@ -109,7 +115,12 @@
                                     <p>Cité Rouge</p>
                                 </div>
                         </a>
-                        <i class="fa-regular fa-heart favorite"></i>
+                        <div class="favorite-container">
+                            <input type="checkbox" id="favorite-3" class="favorite-checkbox">
+                            <label for="favorite-3" class="favorite-label">
+                                <i class="fa-regular fa-heart"></i>
+                            </label>
+                        </div>
                     </article>
                     <article class="resto-card">
                         <a href="#">
@@ -119,22 +130,29 @@
                                 <p>Folie-Méricourt</p>
                             </div>
                         </a>
-                        <i class="fa-regular fa-heart favorite"></i>
+                        <div class="favorite-container">
+                            <input type="checkbox" id="favorite-4" class="favorite-checkbox">
+                            <label for="favorite-4" class="favorite-label">
+                                <i class="fa-regular fa-heart"></i>
+                            </label>
+                        </div>
                     </article>
                 </div>
             </section>
         </main>
         <footer class="footer">
             <h3>ohmyfood</h3>
-            <ul>
+            <ul class="footer-list footer-list-1">
                 <li>
                     <a href="#"><i class="fa-solid fa-utensils"></i>Proposer un restaurant</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa-solid fa-handshake-angle"></i>Devenir partenaire</a>
                 </li>
+            </ul>
+            <ul class="footer-list footer-list-2">
                 <li>
-                    <a href="#">Proposer un restaurant</a>
+                    <a href="#">Mentions légales</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>

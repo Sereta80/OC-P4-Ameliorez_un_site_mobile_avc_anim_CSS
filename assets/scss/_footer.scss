@@ -1,0 +1,54 @@
+@use 'settings' as *;
+
+.footer {
+    background-color: $bg-footer;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+        width: 97%;
+        padding-left: 2rem;
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 3rem;
+    }
+
+    @media (min-width: $breakpoint-wide) {
+        width: 98%;
+        align-items: center;
+
+        .footer-list {
+            display: flex;
+            gap: 5px;
+
+            & > li {
+                padding: 5px;
+            }
+        }
+
+        .footer-list-1 {
+            order: 3;
+        }
+    }
+
+    h3,
+    a {
+        color: $white;
+    }
+
+    h3 {
+        font-family: shrikhand;
+        font-weight: 200;
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
+    li {
+        padding: 5px 20px;
+    }
+
+    .fa-solid {
+        padding-right: 5px;
+    }
+}
