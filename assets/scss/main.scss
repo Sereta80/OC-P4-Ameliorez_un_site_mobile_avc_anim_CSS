@@ -1,9 +1,11 @@
 @use 'sass:color';
+@use 'header';
+@use 'page-resto';
 @use 'footer';
 @use 'settings' as *;
 
-
-/***** Loader *****/
+/***** HOMEPAGE *****/
+/*** Loader ***/
 @keyframes spin {
     0% {
         transform: rotate(0);
@@ -47,7 +49,7 @@
     height: 100vh;
     z-index: 9999;
 
-    animation: fadeOut 1s 1s forwards;
+    animation: fadeOut 1s 2s forwards;
 
     .loader {
         width: 150px;
@@ -97,42 +99,7 @@
 // }
 
 
-/***** Header *****/
-.header {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-        padding: 15px;
-    }
-
-    .location-search {
-        background-color: $light-gray;
-        padding: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
-        transition: 0.3s;
-
-        input {
-            border: none;
-            background-color: transparent;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-        }
-    }
-
-    .fa-location-dot {
-        color: $black;
-    }
-}
-
-
-/***** Hero *****/
+/*** Hero ***/
 .hero {
     padding: 25px;
     text-align: center;
@@ -156,7 +123,7 @@
 }
 
 
-/***** Functioning Section *****/
+/*** Functioning Section ***/
 .functioning {
     padding-bottom: 45px;
 
@@ -245,10 +212,9 @@
     }
 }
 
-/*****  Restaurant Section *****/
+/***  Restaurant Section ***/
 .restaurants {
     background-color: $very-light-gray;
-    // padding-top: 30px;
     padding-bottom: 45px;
 
     @media (min-width: $breakpoint-wide) {
@@ -352,6 +318,19 @@
                         -webkit-text-fill-color: transparent;
                     }
                 }
+
+                @media (min-width: $breakpoint-desktop) {
+                    .favorite-checkbox:hover + .favorite-label {
+                        .fa-regular.fa-heart {
+                            font-weight: bold;
+                            display: inline-block;
+                            background: linear-gradient($primary, $secondary);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+                    }
+                }
             }
         }
 
@@ -373,3 +352,4 @@
         }
     }
 }
+/***** END HOMEPAGE *****/
