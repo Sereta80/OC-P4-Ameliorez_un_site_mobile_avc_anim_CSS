@@ -47,33 +47,47 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
-                &__title {
-                    font-weight: $card-title-weight;
-                }
+                height: 70px;
+                overflow: hidden;
+                cursor: pointer;
 
                 &__content {
                     padding: 1rem 0 1rem 1rem;
-                }
+                    flex: 1; // à voir si je garde cette propriété
+                    min-width: 0;
+                    overflow: hidden;
 
-                &__subcontent {
-                    display: flex;
-                    align-items: center;
+                    .menu-card__title,
+                    .menu-card__subtitle {
+                        @include truncate;
+                    }
+
+                    .menu-card__title {
+                        font-weight: $card-title-weight;
+                        font-size: 1.1rem;
+                    }
+
+                    .menu-card__subtitle {
+                        font-size: 0.95rem;
+                    }
                 }
 
                 &__price {
-                    padding: 0 1rem;
-
-                    & > .white-space {
-                        height: 1.5rem;
-                    }
+                    padding: 0 1rem 2rem 1rem;
+                    font-size: 0.95rem;
+                    font-weight: $title-weight;
+                    display: flex;
+                    align-items: flex-end;
+                    height: 70px;
                 }
 
                 &__check {
                     background-color: $tertiary;
-                    height: 3rem;
+                    width: 2rem;
+                    height: 2.3rem;
                     padding: 1rem;
                     display: flex;
+                    justify-content: center;
                     align-items: center;
                     border-radius: $border-radius-right;
 

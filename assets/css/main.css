@@ -51,6 +51,149 @@ body .btn:hover {
   box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.3);
 }
 
+.footer {
+  background-color: #353535;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+@media (min-width: 768px) {
+  .footer {
+    width: 97%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 3rem;
+  }
+}
+@media (min-width: 1440px) {
+  .footer {
+    width: 98%;
+    align-items: center;
+  }
+  .footer .footer-list {
+    display: flex;
+    gap: 5px;
+  }
+  .footer .footer-list > li {
+    padding: 5px;
+  }
+  .footer .footer-list-1 {
+    order: 3;
+  }
+}
+.footer h3,
+.footer a {
+  color: #FFFFFF;
+}
+.footer h3 {
+  font-family: shrikhand;
+  font-weight: 200;
+  font-size: 18px;
+  padding: 15px 20px;
+}
+.footer li {
+  padding: 5px 20px;
+}
+.footer .fa-solid {
+  padding-right: 5px;
+}
+
+.resto-main {
+  padding: 2rem 1rem;
+  background-color: #F6F6F6;
+}
+.resto-main .resto-name {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding-bottom: 1rem;
+}
+.resto-main .resto-name > h1 {
+  font-family: "Shrikhand";
+  font-size: 1.7rem;
+  line-height: 2rem;
+}
+.resto-main .resto-name > .fa-heart {
+  font-size: 1.7rem;
+  padding: 0 1rem;
+}
+.resto-main .menu {
+  padding: 1rem 0;
+}
+.resto-main .menu > h2 {
+  font-size: 1rem;
+  font-weight: 300;
+  padding-bottom: 0.3rem;
+}
+.resto-main .menu > .underline {
+  background-color: #99E2D0;
+  width: 40px;
+  height: 2.5px;
+}
+.resto-main .menu .menu-container {
+  background-color: #FFFFFF;
+  margin: 1rem 0;
+  border-radius: 15px;
+}
+.resto-main .menu .menu-container .menu-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.resto-main .menu .menu-container .menu-card__content {
+  padding: 1rem 0 1rem 1rem;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.resto-main .menu .menu-container .menu-card__content .menu-card__title,
+.resto-main .menu .menu-container .menu-card__content .menu-card__subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.resto-main .menu .menu-container .menu-card__content .menu-card__title {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.resto-main .menu .menu-container .menu-card__content .menu-card__subtitle {
+  font-size: 0.95rem;
+}
+.resto-main .menu .menu-container .menu-card__price {
+  padding: 0 1rem 2rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  height: 70px;
+}
+.resto-main .menu .menu-container .menu-card__check {
+  background-color: #99E2D0;
+  width: 2rem;
+  height: 2.3rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 15px 15px 0;
+}
+.resto-main .menu .menu-container .menu-card__check .fa-check {
+  background-color: #FFFFFF;
+  padding: 0.2rem;
+  border-radius: 50%;
+  color: #99E2D0;
+  width: 1rem;
+  height: 1rem;
+  text-align: center;
+}
+.resto-main .btn {
+  margin: auto;
+}
+
 /***** Header Homepage *****/
 .header-homepage {
   padding: 10px;
@@ -101,133 +244,6 @@ body .btn:hover {
 .header-resto-page > img {
   width: 100%;
   object-fit: cover;
-}
-
-.resto-main {
-  padding: 2rem 1rem;
-  background-color: #F6F6F6;
-}
-.resto-main .resto-name {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  padding-bottom: 1rem;
-}
-.resto-main .resto-name > h1 {
-  font-family: "Shrikhand";
-  font-size: 1.7rem;
-  line-height: 2rem;
-}
-.resto-main .resto-name > .fa-heart {
-  font-size: 1.7rem;
-  padding: 0 1rem;
-}
-.resto-main .menu {
-  padding: 1rem 0;
-}
-.resto-main .menu > h2 {
-  font-size: 1rem;
-  font-weight: 300;
-  padding-bottom: 0.3rem;
-}
-.resto-main .menu > .underline {
-  background-color: #99E2D0;
-  width: 40px;
-  height: 2.5px;
-}
-.resto-main .menu .menu-container {
-  background-color: #FFFFFF;
-  margin: 1rem 0;
-  border-radius: 15px;
-}
-.resto-main .menu .menu-container .menu-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.resto-main .menu .menu-container .menu-card__title {
-  font-weight: 500;
-}
-.resto-main .menu .menu-container .menu-card__content {
-  padding: 1rem 0 1rem 1rem;
-}
-.resto-main .menu .menu-container .menu-card__subcontent {
-  display: flex;
-  align-items: center;
-}
-.resto-main .menu .menu-container .menu-card__price {
-  padding: 0 1rem;
-}
-.resto-main .menu .menu-container .menu-card__price > .white-space {
-  height: 1.5rem;
-}
-.resto-main .menu .menu-container .menu-card__check {
-  background-color: #99E2D0;
-  height: 3rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  border-radius: 0 15px 15px 0;
-}
-.resto-main .menu .menu-container .menu-card__check .fa-check {
-  background-color: #FFFFFF;
-  padding: 0.2rem;
-  border-radius: 50%;
-  color: #99E2D0;
-  width: 1rem;
-  height: 1rem;
-  text-align: center;
-}
-.resto-main .btn {
-  margin: auto;
-}
-
-.footer {
-  background-color: #353535;
-  width: 100%;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-@media (min-width: 768px) {
-  .footer {
-    width: 97%;
-    padding-left: 2rem;
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 3rem;
-  }
-}
-@media (min-width: 1440px) {
-  .footer {
-    width: 98%;
-    align-items: center;
-  }
-  .footer .footer-list {
-    display: flex;
-    gap: 5px;
-  }
-  .footer .footer-list > li {
-    padding: 5px;
-  }
-  .footer .footer-list-1 {
-    order: 3;
-  }
-}
-.footer h3,
-.footer a {
-  color: #FFFFFF;
-}
-.footer h3 {
-  font-family: shrikhand;
-  font-weight: 200;
-  font-size: 18px;
-  padding: 15px 20px;
-}
-.footer li {
-  padding: 5px 20px;
-}
-.footer .fa-solid {
-  padding-right: 5px;
 }
 
 /***** HOMEPAGE *****/

@@ -29,6 +29,11 @@ $font-family-secondary: 'Shrikhand';
 $content-weight: 300;
 $title-weight: 700;
 $card-title-weight: 500;
+@mixin truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 /* Breakpoints */
 $breakpoint-tablet: 768px;

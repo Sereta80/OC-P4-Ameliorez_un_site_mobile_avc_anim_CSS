@@ -1,7 +1,7 @@
 @use 'sass:color';
-@use 'header';
+@use 'components/footer';
 @use 'page-resto';
-@use 'footer';
+@use 'components/header';
 @use 'settings' as *;
 
 /***** HOMEPAGE *****/
