@@ -80,24 +80,6 @@
     }
 }
 
-/***** Content animation *****/
-// @keyframes contentAppear {
-//     from {
-//         opacity: 0;
-//         transform: translateZ(20px);
-//     }
-
-//     to {
-//         opacity: 1;
-//         transform: translateZ(0);
-//     }
-// }
-
-// .main-container {
-//     opacity: 0;
-//     animation: contentAppear 1s 3s forwards;
-// }
-
 
 /*** Hero ***/
 .hero {
@@ -301,7 +283,7 @@
                 @include fav-style;
 
                 .favorite-checkbox {
-                    display: none;
+                    @include display-none;
                 }
 
                 .fa-regular.fa-heart {
@@ -310,24 +292,14 @@
 
                 .favorite-checkbox:checked + .favorite-label {
                     .fa-regular.fa-heart {
-                        font-weight: bold;
-                        display: inline-block;
-                        background: linear-gradient($primary, $secondary);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        @include bg-fill-heart;
                     }
                 }
 
                 @media (min-width: $breakpoint-desktop) {
                     .favorite-checkbox:hover + .favorite-label {
                         .fa-regular.fa-heart {
-                            font-weight: bold;
-                            display: inline-block;
-                            background: linear-gradient($primary, $secondary);
-                            background-clip: text;
-                            -webkit-background-clip: text;
-                            -webkit-text-fill-color: transparent;
+                            @include bg-fill-heart;
                         }
                     }
                 }
