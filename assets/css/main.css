@@ -61,16 +61,16 @@ body .btn:hover {
 }
 @media (min-width: 768px) {
   .footer {
-    width: 97%;
-    padding-left: 2rem;
+    padding-left: -3rem;
     display: flex;
     flex-direction: row-reverse;
     gap: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .footer {
-    width: 98%;
     align-items: center;
   }
   .footer .footer-list {
@@ -113,22 +113,50 @@ body .btn:hover {
 @keyframes translateX {
   0% {
     visibility: hidden;
-    transform: translateX(24rem);
+    transform: translateX(var(--translate-x));
   }
   100% {
     transform: translateX(0rem);
   }
 }
-.resto-main-container {
-  background-color: #F6F6F6;
+@media (min-width: 1024px) {
+  .resto-main-container {
+    background-color: #FFFFFF;
+  }
 }
 .resto-main-container .resto-main {
   padding: 2rem 0.7rem;
+  margin-bottom: -3.5rem;
   background-color: #F6F6F6;
   position: relative;
   top: -3.5rem;
   border-radius: 40px 40px 0 0;
   overflow: hidden;
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .resto-main-container .resto-main {
+    padding: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .resto-main-container .resto-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1200px) {
+  .resto-main-container .resto-main {
+    padding: 2rem 2rem 3rem 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+@media (min-width: 1201px) {
+  .resto-main-container .resto-main {
+    margin: auto auto -3.5rem auto;
+    width: 1055px;
+  }
 }
 .resto-main-container .resto-main .resto-name {
   display: flex;
@@ -140,6 +168,7 @@ body .btn:hover {
   font-family: "Shrikhand";
   font-size: 1.7rem;
   line-height: 2rem;
+  font-weight: 200;
 }
 .resto-main-container .resto-main .resto-name .favorite-checkbox {
   display: none;
@@ -175,6 +204,45 @@ body .btn:hover {
 .resto-main-container .resto-main .dessert-2,
 .resto-main-container .resto-main .dessert-3 {
   animation: translateX 1200ms ease-in-out backwards;
+}
+@media (max-width: 375px) {
+  .resto-main-container .resto-main .starter-1,
+  .resto-main-container .resto-main .starter-2,
+  .resto-main-container .resto-main .starter-3,
+  .resto-main-container .resto-main .main-course-1,
+  .resto-main-container .resto-main .main-course-2,
+  .resto-main-container .resto-main .main-course-3,
+  .resto-main-container .resto-main .dessert-1,
+  .resto-main-container .resto-main .dessert-2,
+  .resto-main-container .resto-main .dessert-3 {
+    --translate-x: 24rem;
+  }
+}
+@media (max-width: 768px) {
+  .resto-main-container .resto-main .starter-1,
+  .resto-main-container .resto-main .starter-2,
+  .resto-main-container .resto-main .starter-3,
+  .resto-main-container .resto-main .main-course-1,
+  .resto-main-container .resto-main .main-course-2,
+  .resto-main-container .resto-main .main-course-3,
+  .resto-main-container .resto-main .dessert-1,
+  .resto-main-container .resto-main .dessert-2,
+  .resto-main-container .resto-main .dessert-3 {
+    --translate-x: 40rem;
+  }
+}
+@media (min-width: 1200px) {
+  .resto-main-container .resto-main .starter-1,
+  .resto-main-container .resto-main .starter-2,
+  .resto-main-container .resto-main .starter-3,
+  .resto-main-container .resto-main .main-course-1,
+  .resto-main-container .resto-main .main-course-2,
+  .resto-main-container .resto-main .main-course-3,
+  .resto-main-container .resto-main .dessert-1,
+  .resto-main-container .resto-main .dessert-2,
+  .resto-main-container .resto-main .dessert-3 {
+    --translate-x: 55rem;
+  }
 }
 .resto-main-container .resto-main .starters-title {
   animation-delay: 100ms;
@@ -215,6 +283,16 @@ body .btn:hover {
 .resto-main-container .resto-main .menu {
   padding: 1rem 0;
 }
+@media (min-width: 768px) {
+  .resto-main-container .resto-main .menu {
+    min-width: 600px;
+  }
+}
+@media (min-width: 1024px) {
+  .resto-main-container .resto-main .menu {
+    width: 635px;
+  }
+}
 .resto-main-container .resto-main .menu h2 {
   font-size: 1rem;
   font-weight: 300;
@@ -249,29 +327,33 @@ body .btn:hover {
   padding: 1rem 0 1rem 1rem;
   flex: 1;
   min-width: 0;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
+.resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__title,
+.resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__subtitle {
+  white-space: nowrap;
+}
+@media (max-width: 374px) {
+  .resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__title,
+  .resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__subtitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
 .resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__title {
   font-weight: 500;
-  font-size: 1.1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 1.08rem;
 }
 .resto-main-container .resto-main .menu .menu-container .check-label .menu-card__content .menu-card__subtitle {
   font-size: 0.95rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .resto-main-container .resto-main .menu .menu-container .check-label .menu-card__price {
   display: flex;
   align-items: flex-end;
-  padding: 0 1rem 1rem 0.5rem;
+  padding: 0 1rem 1rem 1rem;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: flex-end;
   transform: translateX(4em);
@@ -300,6 +382,17 @@ body .btn:hover {
 .resto-main-container .resto-main .menu .menu-container .checkbox:checked + .check-label .menu-card__check,
 .resto-main-container .resto-main .menu .menu-container .checkbox:checked + .check-label .menu-card__price {
   transform: translateX(0em);
+}
+.resto-main-container .resto-main .menu .menu-container .checkbox:checked + .check-label .menu-card__title,
+.resto-main-container .resto-main .menu .menu-container .checkbox:checked + .check-label .menu-card__subtitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (min-width: 1024px) {
+  .resto-main-container .resto-main .menu .menu-container .checkbox:hover + .check-label .menu-card__check,
+  .resto-main-container .resto-main .menu .menu-container .checkbox:hover + .check-label .menu-card__price {
+    transform: translateX(0em);
+  }
 }
 .resto-main-container .resto-main .btn {
   margin: auto;
@@ -355,6 +448,16 @@ body .btn:hover {
 .header-resto-page > img {
   width: 100%;
   object-fit: cover;
+}
+@media (min-width: 768px) {
+  .header-resto-page > img {
+    max-height: 460px;
+  }
+}
+@media (min-width: 1024px) {
+  .header-resto-page > img {
+    max-height: 383px;
+  }
 }
 
 /***** HOMEPAGE *****/

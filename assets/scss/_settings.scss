@@ -30,12 +30,13 @@ $content-weight: 300;
 $title-weight: 700;
 $card-title-weight: 500;
 @mixin truncate {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 /* Breakpoints */
+$breakpoint-mobile: 375px;
+$breakpoint-large-mobile: 426px;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;

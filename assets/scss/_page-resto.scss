@@ -14,7 +14,9 @@
 @keyframes translateX {
     0% {
         visibility: hidden;
-        transform: translateX(24rem);
+        // transform: translateX(24rem); jusqu'à 375px
+        // transform: translateX(40rem); jusqu'à 768px
+        transform: translateX(var(--translate-x));
     }
 
     100% {
@@ -23,15 +25,39 @@
 }
 
 .resto-main-container {
-    background-color: $very-light-gray;
+    @media (min-width: $breakpoint-desktop) {
+        background-color: $white;
+    }
 
     .resto-main {
         padding: 2rem 0.7rem;
+        margin-bottom: -3.5rem;
         background-color: $very-light-gray;
         position: relative;
         top: -3.5rem;
         border-radius: 40px 40px 0 0;
         overflow: hidden;
+
+        @media (min-width: $breakpoint-large-mobile) and (max-width: $breakpoint-tablet) {
+            padding: 2rem;
+        }
+
+        @media (min-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: $breakpoint-tablet) and (max-width: 1200px) {
+            padding: 2rem 2rem 3rem 2rem;
+            margin-left: 4rem;
+            margin-right: 4rem;
+        }
+
+        @media (min-width: 1201px) {
+            margin: auto auto -3.5rem auto;
+            width: 1055px;
+        }
 
         .resto-name {
             display: flex;
@@ -43,6 +69,7 @@
                 font-family: $font-family-secondary;
                 font-size: 1.7rem;
                 line-height: 2rem;
+                font-weight: 200;
             }
 
             .favorite-checkbox {
@@ -82,6 +109,18 @@
         .dessert-2,
         .dessert-3 {
             animation: translateX 1200ms ease-in-out backwards;
+
+            @media (max-width: $breakpoint-mobile) {
+                --translate-x: 24rem;
+            }
+
+            @media (max-width: $breakpoint-tablet) {
+                --translate-x: 40rem;
+            }
+
+            @media (min-width: 1200px) {
+                --translate-x: 55rem;
+            }
         }
 
         .starters-title {
@@ -135,6 +174,14 @@
         .menu {
             padding: 1rem 0;
 
+            @media (min-width: $breakpoint-tablet) {
+                min-width: 600px;
+            }
+
+            @media (min-width: $breakpoint-desktop) {
+                width: 635px;
+            }
+
             h2 {
                 font-size: 1rem;
                 font-weight: $content-weight;
@@ -172,28 +219,34 @@
                         padding: 1rem 0 1rem 1rem;
                         flex: 1;
                         min-width: 0;
-                        overflow: hidden;
                         display: flex;
                         flex-direction: column;
 
+                        .menu-card__title,
+                        .menu-card__subtitle {
+                            white-space: nowrap;
+
+                            @media (max-width: 374px) {
+                                @include truncate;
+                            }
+                        }
+
                         .menu-card__title {
                             font-weight: 500;
-                            font-size: 1.1rem;
-                            @include truncate;
+                            font-size: 1.08rem;
                         }
 
                         .menu-card__subtitle {
                             font-size: 0.95rem;
-                            @include truncate;
                         }
                     }
 
                     .menu-card__price {
                         display: flex;
                         align-items: flex-end;
-                        padding: 0 1rem 1rem 0.5rem;
+                        padding: 0 1rem 1rem 1rem;
                         font-size: 0.95rem;
-                        font-weight: $title-weight;
+                        font-weight: 600;
                         display: flex;
                         align-items: flex-end;
                         transform: translateX(4em);
@@ -227,6 +280,20 @@
                     .menu-card__check,
                     .menu-card__price {
                         transform: translateX(0em);
+                    }
+
+                    .menu-card__title,
+                    .menu-card__subtitle {
+                        @include truncate;
+                    }
+                }
+
+                @media (min-width: $breakpoint-desktop) {
+                    .checkbox:hover + .check-label {
+                        .menu-card__check,
+                        .menu-card__price {
+                            transform: translateX(0em);
+                        }
                     }
                 }
             }
