@@ -14,8 +14,6 @@
 @keyframes translateX {
     0% {
         visibility: hidden;
-        // transform: translateX(24rem); jusqu'à 375px
-        // transform: translateX(40rem); jusqu'à 768px
         transform: translateX(var(--translate-x));
     }
 

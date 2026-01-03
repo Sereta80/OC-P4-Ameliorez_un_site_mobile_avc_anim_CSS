@@ -37,6 +37,25 @@
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.main-container-homepage {
+    .header-homepage,
+    .main,
+    .footer {
+        animation: fadeIn 1s 2.5s backwards;
+    }
+}
+
 .loader-container {
     position: fixed;
     top: 0;
@@ -170,7 +189,6 @@
             border-radius: 20px;
             min-width: 220px;
             height: 25px;
-            // box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
             box-shadow: 4px 4px 12px 0 rgba(0,0,0,0.15);
             transition: 0.3s;
 

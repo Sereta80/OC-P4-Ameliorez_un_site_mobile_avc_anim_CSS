@@ -16,7 +16,7 @@
 body {
   font-family: "Roboto", sans-serif;
 }
-body .main-container {
+body .main-container-homepage {
   box-sizing: border-box;
   max-width: 1440px;
   margin: 0 auto;
@@ -487,6 +487,21 @@ body .btn:hover {
     visibility: hidden;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main-container-homepage .header-homepage,
+.main-container-homepage .main,
+.main-container-homepage .footer {
+  animation: fadeIn 1s 2.5s backwards;
+}
+
 .loader-container {
   position: fixed;
   top: 0;
