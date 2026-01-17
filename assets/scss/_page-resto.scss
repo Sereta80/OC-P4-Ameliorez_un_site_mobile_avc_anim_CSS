@@ -1,26 +1,11 @@
 @use 'settings' as *;
 
-// @keyframes translateY {
-//     0% {
-//         visibility: hidden;
-//         transform: translateY(-3rem);
-//     }
-
-//     100% {
-//         transform: translateY(0rem);
-//     }
-// }
-
-// @keyframes translateX {
-//     0% {
-//         visibility: hidden;
-//         transform: translateX(var(--translate-x));
-//     }
-
-//     100% {
-//         transform: translateX(0rem);
-//     }
-// }
+@keyframes appear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 .resto-main-container {
     @media (min-width: $breakpoint-desktop) {
@@ -87,91 +72,17 @@
             }
         }
 
-        .title-container {
-            overflow: hidden;
-        }
-
-        .starters-title,
-        .plats-title,
-        .desserts-title {
-            animation: translateY 1200ms ease-in-out backwards;
-        }
-
-        .starter-1,
-        .starter-2,
-        .starter-3,
-        .main-course-1,
-        .main-course-2,
-        .main-course-3,
-        .main-course-4,
-        .dessert-1,
-        .dessert-2,
-        .dessert-3 {
-            animation: translateX 1200ms ease-in-out backwards;
-
-            @media (max-width: $breakpoint-mobile) {
-                --translate-x: 24rem;
-            }
-
-            @media (max-width: $breakpoint-tablet) {
-                --translate-x: 40rem;
-            }
-
-            @media (min-width: 769px) {
-                --translate-x: 55rem;
+        @for $i from 1 through 10 {
+            .menu-category:nth-of-type(#{$i}) {
+                animation-delay: 500ms * $i;
             }
         }
 
-        .starters-title {
-            animation-delay: 100ms;
-        }
-
-        .starter-1 {
-            animation-delay: 200ms;
-        }
-
-        .starter-2 {
-            animation-delay: 300ms;
-        }
-
-        .starter-3 {
-            animation-delay: 400ms;
-        }
-
-        .plats-title {
-            animation-delay: 500ms;
-        }
-
-        .main-course-1 {
-            animation-delay: 600ms;
-        }
-
-        .main-course-2 {
-            animation-delay: 700ms;
-        }
-
-        .main-course-3 {
-            animation-delay: 800ms;
-        }
-
-        .desserts-title {
-            animation-delay: 900ms;
-        }
-
-        .dessert-1 {
-            animation-delay: 1000ms;
-        }
-
-        .dessert-2 {
-            animation-delay: 1100ms;
-        }
-
-        .dessert-3 {
-            animation-delay: 1200ms;
-        }
-
-        .menu {
+        .menu-category {
             padding: 1rem 0;
+            opacity: 0;
+            transform: translateY(-10rem);
+            animation: appear 1000ms ease-in-out forwards;
 
             @media (min-width: $breakpoint-tablet) {
                 min-width: 600px;
@@ -181,10 +92,19 @@
                 width: 635px;
             }
 
-            h2 {
+            @for $i from 1 through 10 {
+                .menu-category__title:nth-of-type(#{$i}) {
+                    animation-delay: 500ms * $i;
+                }
+            }
+
+            &__title {
                 font-size: 1rem;
                 font-weight: $content-weight;
                 padding-bottom: 0.3rem;
+                opacity: 0;
+                transform: translateY(-10rem);
+                animation: appear 1000ms ease-in-out forwards;
 
                 &::after {
                     content: "";
@@ -196,13 +116,22 @@
                 }
             }
 
-            .menu-container {
+            @for $i from 1 through 10 {
+                .menu-item:nth-child(#{$i}) {
+                    animation-delay: 500ms * $i;
+                }
+            }
+
+            .menu-item {
                 background-color: $white;
                 margin: 1rem 0;
                 border-radius: $border-radius-global;
                 height: 70px;
                 box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.15);
                 overflow: hidden;
+                opacity: 0;
+                transform: translateY(-10rem);
+                animation: appear 1000ms ease-in-out forwards;
 
                 .checkbox {
                     display: none;
@@ -214,15 +143,15 @@
                     height: 100%;
                     cursor: pointer;
 
-                    .menu-card__content {
+                    .menu-item__content {
                         padding: 1rem 0 1rem 1rem;
                         flex: 1;
                         min-width: 0;
                         display: flex;
                         flex-direction: column;
 
-                        .menu-card__title,
-                        .menu-card__subtitle {
+                        .menu-item__title,
+                        .menu-item__subtitle {
                             white-space: nowrap;
 
                             @media (max-width: 374px) {
@@ -230,17 +159,17 @@
                             }
                         }
 
-                        .menu-card__title {
+                        .menu-item__title {
                             font-weight: 500;
                             font-size: 1.08rem;
                         }
 
-                        .menu-card__subtitle {
+                        .menu-item__subtitle {
                             font-size: 0.95rem;
                         }
                     }
 
-                    .menu-card__price {
+                    .menu-item__price {
                         display: flex;
                         align-items: flex-end;
                         padding: 0 1rem 1rem 1rem;
@@ -252,7 +181,7 @@
                         transition: transform 300ms;
                     }
 
-                    .menu-card__check {
+                    .menu-item__check {
                         background-color: $tertiary;
                         width: 1.8rem;
                         padding: 1rem;
@@ -276,21 +205,21 @@
                 }
 
                 .checkbox:checked + .check-label {
-                    .menu-card__check,
-                    .menu-card__price {
+                    .menu-item__check,
+                    .menu-item__price {
                         transform: translateX(0em);
                     }
 
-                    .menu-card__title,
-                    .menu-card__subtitle {
+                    .menu-item__title,
+                    .menu-item__subtitle {
                         @include truncate;
                     }
                 }
 
                 @media (min-width: $breakpoint-desktop) {
                     .checkbox:hover + .check-label {
-                        .menu-card__check,
-                        .menu-card__price {
+                        .menu-item__check,
+                        .menu-item__price {
                             transform: translateX(0em);
                         }
                     }
