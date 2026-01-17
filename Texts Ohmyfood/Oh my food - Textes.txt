@@ -39,8 +39,8 @@ Et glace à la vanille de Madagascar
 Mousse au chocolat 
 Au piment d'Espelette et à la truffe noire
 23€  
-  
----     
+
+---
 
 Le délice des sens
 
@@ -49,24 +49,24 @@ Tartare de thon
 Assaisonné au yuzu
 25€
 
-Bouchée de homard croustillant 
+Bouchée de homard croustillant
 Et sa farandole de petits légumes
 35€
 
-Velouté de cèpes 
+Velouté de cèpes
 Aux truffes
 20€
-        
+
 Plats
-Poulet rôti aux herbes de Provence 
+Poulet rôti aux herbes de Provence
 Et sa crème de truffe
 40€
 
-Langouste rôtie 
+Langouste rôtie
 Et ses légumes de saison
 35€
 
-Côte de bœuf Angus 
+Côte de bœuf Angus
 Et sa purée de panais
 44€
 
@@ -75,11 +75,11 @@ Farandole de desserts
 Du chef
 18€
 
-Crème brulée 
+Crème brulée
 Revisitée
 22€
 
-Tiramisu 
+Tiramisu
 À la noisette
 23€
 
@@ -88,11 +88,11 @@ Tiramisu
 La note enchantée
 
 Entrées
-Ravioles de foie gras 
+Ravioles de foie gras
 Accompagnées de leur crème à la truffe
 25€
 
-Caviar osciètre 
+Caviar osciètre
 Sur blini à la farine de blé noir
 35€
 
@@ -103,7 +103,7 @@ Marinés aux zestes d'orange
 Foie gras de canard cuit entier
 Confiture de figue et pain toasté
 35€
-        
+
 Plats
 Noix de coquilles Saint-Jacques
 Sur lit de purée de céleri-rave

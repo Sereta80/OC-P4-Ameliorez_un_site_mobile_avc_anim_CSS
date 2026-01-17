@@ -3,9 +3,14 @@
 /***** Header Homepage *****/
 .header-homepage {
     padding: 10px;
+    padding-bottom: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media (min-width: $breakpoint-desktop) {
+        padding-bottom: 0;
+    }
 
     img {
         padding: 15px;
@@ -17,8 +22,10 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
-        transition: 0.3s;
+
+        @media (max-width: 1023px) {
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
+        }
 
         input {
             border: none;
@@ -58,11 +65,11 @@
         width: 100%;
         object-fit: cover;
 
-        @media (min-width: $breakpoint-tablet) {
-            max-height: 460px;
+        @media (max-width: $breakpoint-tablet) {
+            height: 275px;
         }
 
-        @media (min-width: $breakpoint-desktop) {
+        @media (min-width: 769px) {
             max-height: 383px;
         }
     }

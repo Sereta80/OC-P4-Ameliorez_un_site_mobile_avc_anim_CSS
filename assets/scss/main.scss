@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'components/footer';
 @use 'page-resto';
+@use 'page-resto-new';
 @use 'components/header';
 @use 'settings' as *;
 
@@ -159,7 +160,6 @@
         @media (min-width: $breakpoint-desktop) {
             flex-direction: unset;
             align-items: unset;
-            padding-left: 2rem;
         }
     }
 
@@ -187,10 +187,13 @@
             background-color: $very-light-gray;
             padding: 25px 40px;
             border-radius: 20px;
-            min-width: 220px;
+            // width: clamp(205px, 2vw, 250px);
             height: 25px;
             box-shadow: 4px 4px 12px 0 rgba(0,0,0,0.15);
-            transition: 0.3s;
+
+            @media (max-width: 374px) {
+                width: 205px;
+            }
 
             p {
                 font-weight: 500;
@@ -248,7 +251,7 @@
             flex-direction: unset;
             flex-wrap: wrap;
             align-items: unset;
-            justify-content: center;
+            // justify-content: center;
         }
 
         @media (min-width: $breakpoint-desktop) {
