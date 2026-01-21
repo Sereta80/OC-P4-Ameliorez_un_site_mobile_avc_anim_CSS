@@ -154,11 +154,24 @@
         flex-direction: column;
         gap: 25px;
         align-items: center;
-        padding-left: 1rem;
+        padding-left: calc(1rem + 14px);
+
+        @media (min-width: $breakpoint-tablet) {
+            padding-left: calc(50px + 14px);
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
 
         @media (min-width: $breakpoint-desktop) {
+            padding: 2rem;
+            padding-left: calc(2rem + 14px);
             flex-direction: unset;
             align-items: unset;
+        }
+
+        @media (min-width: $breakpoint-wide) {
+            padding: 0 0 30px 0;
+            padding-left: 14px;
         }
     }
 

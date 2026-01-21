@@ -594,12 +594,27 @@ body .btn:hover {
   flex-direction: column;
   gap: 25px;
   align-items: center;
-  padding-left: 1rem;
+  padding-left: calc(1rem + 14px);
+}
+@media (min-width: 768px) {
+  .functioning .functioning-container {
+    padding-left: 64px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 @media (min-width: 1024px) {
   .functioning .functioning-container {
+    padding: 2rem;
+    padding-left: calc(2rem + 14px);
     flex-direction: unset;
     align-items: unset;
+  }
+}
+@media (min-width: 1440px) {
+  .functioning .functioning-container {
+    padding: 0 0 30px 0;
+    padding-left: 14px;
   }
 }
 .functioning .functioning-square {
