@@ -43,7 +43,7 @@ $breakpoint-wide: 1440px;
 
 /* Button */
 @mixin button {
-    padding: 1rem 2.5rem;
+    padding: 16px 40px;
     margin: 30px;
     width: fit-content;
     display: flex;
@@ -51,7 +51,7 @@ $breakpoint-wide: 1440px;
     background: $bg-button;
     border-radius: 40px;
     color: $white;
-    font-size: 1rem;
+    font-size: 16px;
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2);
     transition: 500ms;
 }
@@ -59,9 +59,9 @@ $breakpoint-wide: 1440px;
 /* Favorite style */
 @mixin fav-style {
     position: absolute;
-    right: 1rem;
-    bottom: 1.5rem;
-    font-size: 1.5rem;
+    right: 16px;
+    bottom: 24px;
+    font-size: 24px;
     transition: 500ms;
 }
 
@@ -86,9 +86,14 @@ body {
 
     .main-container-homepage {
         box-sizing: border-box;
-        // max-width: 1440px;
+        width: 100%;
         display: flex;
         flex-direction: column;
+
+        @media (min-width: $breakpoint-wide) {
+            width: 1440px;
+            margin: auto;
+        }
     }
 
     a {

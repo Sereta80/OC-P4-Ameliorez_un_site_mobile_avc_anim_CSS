@@ -109,6 +109,10 @@
     flex-direction: column;
     align-items: center;
 
+    @media (min-width: 1441px) {
+        border-radius: $border-radius-bottom;
+    }
+
     & > h2 {
         margin-bottom: 15px;
         padding: 10px 25px;
@@ -128,33 +132,29 @@
 .functioning {
     padding-bottom: 45px;
 
-    @media (min-width: $breakpoint-wide) {
-        margin: 0;
-        padding: 30px 200px;
-    }
-
     & > h2 {
-        padding: 30px 15px;
+        padding: 32px 16px;
 
         @media (min-width: $breakpoint-tablet) {
-            padding: 30px 50px;
+            padding: 32px 50px;
         }
 
         @media (min-width: $breakpoint-desktop) {
-            padding: 2rem;
+            padding: 32px;
         }
 
         @media (min-width: $breakpoint-wide) {
-            padding: 0 0 30px 0;
+            padding: 32px 0 32px 200px;
         }
     }
 
-    .functioning-container {
+    .functioning-list {
         display: flex;
         flex-direction: column;
         gap: 25px;
         align-items: center;
-        padding-left: calc(1rem + 14px);
+        padding: 0 16px;
+        padding-left: calc(16px + 14px);
 
         @media (min-width: $breakpoint-tablet) {
             padding-left: calc(50px + 14px);
@@ -163,19 +163,19 @@
         }
 
         @media (min-width: $breakpoint-desktop) {
-            padding: 2rem;
-            padding-left: calc(2rem + 14px);
-            flex-direction: unset;
-            align-items: unset;
+            padding: 32px;
+            padding-left: calc(32px + 14px);
+            flex-direction: row;
+            justify-content: center;
         }
 
         @media (min-width: $breakpoint-wide) {
-            padding: 0 0 30px 0;
-            padding-left: 14px;
+            padding: 0 0 30px 88px;
+            gap: 40px;
         }
     }
 
-    .functioning-square {
+    .functioning-item {
         display: flex;
         align-items: center;
         position: relative;
@@ -200,11 +200,16 @@
             padding: 25px 40px;
             border-radius: 20px;
             // width: clamp(205px, 2vw, 250px);
+            width: 260px;
             height: 25px;
             box-shadow: 4px 4px 12px 0 rgba(0,0,0,0.15);
 
             @media (max-width: 374px) {
                 width: 205px;
+            }
+
+            @media (min-width: $breakpoint-desktop) and (max-width: 1154px) {
+                width: 225px;
             }
 
             p {
@@ -213,7 +218,7 @@
         }
 
         .fa-solid {
-            font-size: 1.2rem;
+            font-size: 20px;
         }
 
         .fa-mobile-screen-button,
@@ -232,63 +237,65 @@
     background-color: $very-light-gray;
     padding-bottom: 45px;
 
-    @media (min-width: $breakpoint-wide) {
-        margin: 0;
-        padding: 30px 200px;
+    @media (min-width: 1441px) {
+        border-radius: $border-radius-top;
     }
 
     & > h2 {
-        padding: 30px 15px;
+        padding: 32px 16px;
 
         @media (min-width: $breakpoint-tablet) {
-            padding: 30px 50px;
+            padding: 32px 50px;
         }
 
         @media (min-width: $breakpoint-desktop) {
-            padding: 2rem;
+            padding: 32px;
         }
 
         @media (min-width: $breakpoint-wide) {
-            padding: 0 0 30px 0;
+            padding: 32px 202px;
         }
     }
 
     .resto-container {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 16px;
 
         @media (min-width: $breakpoint-tablet) {
             flex-direction: unset;
             flex-wrap: wrap;
-            align-items: unset;
-            // justify-content: center;
         }
 
         @media (min-width: $breakpoint-desktop) {
-            gap: 3rem;
+            gap: 48px;
         }
 
         @media (min-width: $breakpoint-wide) {
-
-            row-gap: 3rem;
-            column-gap: 3.5rem;
+            row-gap: 56px;
+            column-gap: 58px;
         }
 
         .resto-card {
-            min-width: 315px;
+            width: 343px;
             height: 251px;
             position: relative;
             background-color: $white;
             border-radius: $border-radius-global;
 
+            @media (min-width: 320px) and (max-width: 374px) {
+                width: clamp(295px, 2vw, 343px);
+            }
+
             @media (min-width: $breakpoint-desktop) {
-                min-width: 400px;
+                width: 400px;
             }
 
             @media (min-width: $breakpoint-wide) {
-                width: 490px;
+                width: clamp(490px, 2vw, 550px);
+                height: clamp(251px, 2vw, 300px);
             }
 
             img {
@@ -323,9 +330,11 @@
                     cursor: pointer;
                 }
 
-                .favorite-checkbox:checked + .favorite-label {
-                    .fa-regular.fa-heart {
-                        @include bg-fill-heart;
+                @media (max-width: 1023px) {
+                    .favorite-checkbox:checked + .favorite-label {
+                        .fa-regular.fa-heart {
+                            @include bg-fill-heart;
+                        }
                     }
                 }
 

@@ -133,6 +133,29 @@
                 transform: translateY(-10rem);
                 animation: appear 1000ms ease-in-out forwards;
 
+                @media (max-width: 1023px) {
+                    .checkbox:checked + .check-label {
+                        .menu-item__check,
+                        .menu-item__price {
+                            transform: translateX(0em);
+                        }
+
+                        .menu-item__title,
+                        .menu-item__subtitle {
+                            @include truncate;
+                        }
+                    }
+                }
+
+                @media (min-width: $breakpoint-desktop) {
+                    .checkbox:hover + .check-label {
+                        .menu-item__check,
+                        .menu-item__price {
+                            transform: translateX(0em);
+                        }
+                    }
+                }
+
                 .checkbox {
                     display: none;
                 }
@@ -200,27 +223,6 @@
                             width: 1rem;
                             height: 1rem;
                             text-align: center;
-                        }
-                    }
-                }
-
-                .checkbox:checked + .check-label {
-                    .menu-item__check,
-                    .menu-item__price {
-                        transform: translateX(0em);
-                    }
-
-                    .menu-item__title,
-                    .menu-item__subtitle {
-                        @include truncate;
-                    }
-                }
-
-                @media (min-width: $breakpoint-desktop) {
-                    .checkbox:hover + .check-label {
-                        .menu-item__check,
-                        .menu-item__price {
-                            transform: translateX(0em);
                         }
                     }
                 }

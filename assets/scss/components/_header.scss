@@ -18,13 +18,17 @@
 
     .location-search {
         background-color: $light-gray;
-        padding: 20px;
-        width: 100%;
+        padding: 20px 0;
+        width: 1440px;
         display: flex;
         justify-content: center;
 
         @media (max-width: 1023px) {
             box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        @media (min-width: 1441px) {
+            border-radius: $border-radius-top;
         }
 
         input {
