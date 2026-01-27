@@ -9,9 +9,23 @@
 /* Typography */
 /* Breakpoints */
 /* Button */
-/* Favorite style */
-/* Display None */
 /* Bg color fill heart */
+/* Remplissage des coeurs */
+@keyframes fill-bgcolor {
+  from {
+    transform: scale(0.1);
+    font-size: 24px;
+  }
+  to {
+    transform: scale(1);
+    font-weight: bold;
+    display: inline-block;
+    background: linear-gradient(#9356DC, #FF79DA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 /* Body */
 body {
   font-family: "Roboto", sans-serif;
@@ -77,6 +91,14 @@ body .btn:hover {
     align-items: center;
     padding-right: 25px;
   }
+  .footer a,
+  .footer a > h3 {
+    transition: color 500ms;
+  }
+  .footer a:hover,
+  .footer a > h3:hover {
+    color: #FF79DA;
+  }
   .footer .footer-list {
     display: flex;
     gap: 5px;
@@ -126,17 +148,17 @@ body .btn:hover {
   }
 }
 .resto-main-container .resto-main {
-  padding: 2rem 0.7rem;
-  margin-bottom: -3.5rem;
+  padding: 32px 11px;
+  margin-bottom: -56px;
   background-color: #F6F6F6;
   position: relative;
-  top: -3.5rem;
+  top: -56px;
   border-radius: 40px 40px 0 0;
   overflow: hidden;
 }
 @media (min-width: 426px) and (max-width: 768px) {
   .resto-main-container .resto-main {
-    padding: 2rem;
+    padding: 32px;
   }
 }
 @media (min-width: 768px) {
@@ -148,44 +170,47 @@ body .btn:hover {
 }
 @media (min-width: 768px) and (max-width: 1200px) {
   .resto-main-container .resto-main {
-    padding: 2rem 2rem 3rem 2rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    padding: 32px 32px 48px 32px;
+    margin-left: 64px;
+    margin-right: 64px;
   }
 }
 @media (min-width: 1201px) {
   .resto-main-container .resto-main {
-    margin: auto auto -3.5rem auto;
+    margin: auto auto -56px auto;
     width: 1055px;
   }
 }
 .resto-main-container .resto-main .resto-name {
   display: flex;
   align-items: center;
-  gap: 0.7rem;
-  padding-bottom: 1rem;
+  gap: 11px;
+  padding-bottom: 16px;
 }
 .resto-main-container .resto-main .resto-name > h1 {
   font-family: "Shrikhand";
-  font-size: 1.7rem;
-  line-height: 2rem;
+  font-size: 27px;
+  line-height: 32px;
   font-weight: 200;
 }
 .resto-main-container .resto-main .resto-name .favorite-checkbox {
   display: none;
 }
 .resto-main-container .resto-main .resto-name .favorite-label .fa-heart {
-  font-size: 1.7rem;
-  padding: 0 1rem;
+  font-size: 24px;
+  padding: 0 16px;
   cursor: pointer;
+  transform-origin: bottom;
 }
-.resto-main-container .resto-main .resto-name .favorite-checkbox:checked + .favorite-label .fa-regular.fa-heart {
-  font-weight: bold;
-  display: inline-block;
-  background: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@media (max-width: 1023px) {
+  .resto-main-container .resto-main .resto-name .favorite-checkbox:checked + .favorite-label .fa-regular.fa-heart {
+    animation: fill-bgcolor 800ms ease-in-out forwards;
+  }
+}
+@media (min-width: 1024px) {
+  .resto-main-container .resto-main .resto-name .favorite-checkbox:hover + .favorite-label .fa-regular.fa-heart {
+    animation: fill-bgcolor 800ms ease-in-out forwards;
+  }
 }
 .resto-main-container .resto-main .menu-category:nth-of-type(1) {
   animation-delay: 500ms;
@@ -218,9 +243,9 @@ body .btn:hover {
   animation-delay: 5000ms;
 }
 .resto-main-container .resto-main .menu-category {
-  padding: 1rem 0;
+  padding: 16px 0;
   opacity: 0;
-  transform: translateY(-10rem);
+  transform: translateY(-160px);
   animation: appear 1000ms ease-in-out forwards;
 }
 @media (min-width: 768px) {
@@ -264,11 +289,11 @@ body .btn:hover {
   animation-delay: 5000ms;
 }
 .resto-main-container .resto-main .menu-category__title {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 300;
-  padding-bottom: 0.3rem;
+  padding-bottom: 5px;
   opacity: 0;
-  transform: translateY(-10rem);
+  transform: translateY(-160px);
   animation: appear 1000ms ease-in-out forwards;
 }
 .resto-main-container .resto-main .menu-category__title::after {
@@ -311,13 +336,13 @@ body .btn:hover {
 }
 .resto-main-container .resto-main .menu-category .menu-item {
   background-color: #FFFFFF;
-  margin: 1rem 0;
+  margin: 16px 0;
   border-radius: 15px;
   height: 70px;
   box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
   opacity: 0;
-  transform: translateY(-10rem);
+  transform: translateY(-160px);
   animation: appear 1000ms ease-in-out forwards;
 }
 @media (max-width: 1023px) {
@@ -347,7 +372,7 @@ body .btn:hover {
   cursor: pointer;
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content {
-  padding: 1rem 0 1rem 1rem;
+  padding: 16px 0 16px 16px;
   flex: 1;
   min-width: 0;
   display: flex;
@@ -365,17 +390,20 @@ body .btn:hover {
   }
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content .menu-item__title {
+  display: block;
   font-weight: 500;
-  font-size: 1.08rem;
+  font-size: 17px;
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content .menu-item__subtitle {
-  font-size: 0.95rem;
+  display: block;
+  font-size: 15px;
+  font-weight: 300;
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__price {
   display: flex;
   align-items: flex-end;
-  padding: 0 1rem 1rem 1rem;
-  font-size: 0.95rem;
+  padding: 0 16px 16px 16px;
+  font-size: 15px;
   font-weight: 600;
   display: flex;
   align-items: flex-end;
@@ -384,8 +412,8 @@ body .btn:hover {
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__check {
   background-color: #99E2D0;
-  width: 1.8rem;
-  padding: 1rem;
+  width: 29px;
+  padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -395,11 +423,11 @@ body .btn:hover {
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__check .fa-check {
   background-color: #FFFFFF;
-  padding: 0.2rem;
+  padding: 3px;
   border-radius: 50%;
   color: #99E2D0;
-  width: 1rem;
-  height: 1rem;
+  width: 16px;
+  height: 16px;
   text-align: center;
 }
 .resto-main-container .resto-main .btn {
@@ -743,6 +771,20 @@ body .btn:hover {
     column-gap: 58px;
   }
 }
+.restaurants .resto-container .resto-card:nth-child(1) a::after, .restaurants .resto-container .resto-card:nth-child(2) a::after {
+  content: "Nouveau";
+  position: absolute;
+  background-color: #99E2D0;
+  color: #008766;
+  font-weight: 500;
+  right: 12px;
+  top: 15px;
+  padding: 8px;
+  width: 65px;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 14px;
+}
 .restaurants .resto-container .resto-card {
   width: 343px;
   height: 251px;
@@ -772,19 +814,6 @@ body .btn:hover {
   height: 175px;
   border-radius: 15px 15px 0 0;
 }
-.restaurants .resto-container .resto-card .tag-new {
-  background-color: #99E2D0;
-  color: #008766;
-  font-weight: 500;
-  padding: 8px;
-  width: 65px;
-  text-align: center;
-  border-radius: 3px;
-  font-size: 14px;
-  position: absolute;
-  right: 12px;
-  top: 15px;
-}
 .restaurants .resto-container .resto-card .favorite-container {
   position: absolute;
   right: 16px;
@@ -797,25 +826,16 @@ body .btn:hover {
 }
 .restaurants .resto-container .resto-card .favorite-container .fa-regular.fa-heart {
   cursor: pointer;
+  transform-origin: bottom;
 }
 @media (max-width: 1023px) {
   .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:checked + .favorite-label .fa-regular.fa-heart {
-    font-weight: bold;
-    display: inline-block;
-    background: linear-gradient(#9356DC, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: fill-bgcolor 800ms ease-in-out forwards;
   }
 }
 @media (min-width: 1024px) {
   .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:hover + .favorite-label .fa-regular.fa-heart {
-    font-weight: bold;
-    display: inline-block;
-    background: linear-gradient(#9356DC, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    animation: fill-bgcolor 800ms ease-in-out forwards;
   }
 }
 .restaurants .resto-container .resto-card-content {
@@ -824,7 +844,7 @@ body .btn:hover {
   flex-direction: column;
   gap: 3px;
 }
-.restaurants .resto-container .resto-card-content h4 {
+.restaurants .resto-container .resto-card-content h3 {
   font-size: 18px;
   color: #000000;
 }

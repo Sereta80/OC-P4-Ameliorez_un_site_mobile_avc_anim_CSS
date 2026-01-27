@@ -17,6 +17,15 @@
         align-items: center;
         padding-right: 25px;
 
+        a,
+        a > h3 {
+            transition: color 500ms;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
         .footer-list {
             display: flex;
             gap: 5px;

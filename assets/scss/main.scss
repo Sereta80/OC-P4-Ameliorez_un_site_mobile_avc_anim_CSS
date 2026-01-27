@@ -199,7 +199,6 @@
             background-color: $very-light-gray;
             padding: 25px 40px;
             border-radius: 20px;
-            // width: clamp(205px, 2vw, 250px);
             width: 260px;
             height: 25px;
             box-shadow: 4px 4px 12px 0 rgba(0,0,0,0.15);
@@ -278,6 +277,24 @@
             column-gap: 58px;
         }
 
+        & .resto-card:nth-child(1),
+        & .resto-card:nth-child(2) {
+            & a::after {
+                content: "Nouveau";
+                position: absolute;
+                background-color: $tertiary;
+                color: $quaternary;
+                font-weight: 500;
+                right: 12px;
+                top: 15px;
+                padding: 8px;
+                width: 65px;
+                text-align: center;
+                border-radius: 3px;
+                font-size: 14px;
+            }
+        }
+
         .resto-card {
             width: 343px;
             height: 251px;
@@ -305,35 +322,27 @@
                 border-radius: $border-radius-top;
             }
 
-            .tag-new {
-                background-color: $tertiary;
-                color: $quaternary;
-                font-weight: 500;
-                padding: 8px;
-                width: 65px;
-                text-align: center;
-                border-radius: 3px;
-                font-size: 14px;
-                position: absolute;
-                right: 12px;
-                top: 15px;
-            }
-
             .favorite-container {
-                @include fav-style;
+                position: absolute;
+                right: 16px;
+                bottom: 24px;
+                font-size: $font-size-heart;
+                transition: 500ms;
 
                 .favorite-checkbox {
-                    @include display-none;
+                    display: none;
                 }
 
                 .fa-regular.fa-heart {
                     cursor: pointer;
+                    transform-origin: bottom;
                 }
 
                 @media (max-width: 1023px) {
                     .favorite-checkbox:checked + .favorite-label {
                         .fa-regular.fa-heart {
-                            @include bg-fill-heart;
+                            // @include bg-fill-heart;
+                            animation: fill-bgcolor 800ms ease-in-out forwards;
                         }
                     }
                 }
@@ -341,7 +350,8 @@
                 @media (min-width: $breakpoint-desktop) {
                     .favorite-checkbox:hover + .favorite-label {
                         .fa-regular.fa-heart {
-                            @include bg-fill-heart;
+                            // @include bg-fill-heart;
+                            animation: fill-bgcolor 800ms ease-in-out forwards;
                         }
                     }
                 }
@@ -354,7 +364,7 @@
             flex-direction: column;
             gap: 3px;
 
-            h4 {
+            h3 {
                 font-size: 18px;
                 color: $black;
             }

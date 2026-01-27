@@ -13,16 +13,16 @@
     }
 
     .resto-main {
-        padding: 2rem 0.7rem;
-        margin-bottom: -3.5rem;
+        padding: 32px 11px;
+        margin-bottom: -56px;
         background-color: $very-light-gray;
         position: relative;
-        top: -3.5rem;
+        top: -56px;
         border-radius: 40px 40px 0 0;
         overflow: hidden;
 
         @media (min-width: $breakpoint-large-mobile) and (max-width: $breakpoint-tablet) {
-            padding: 2rem;
+            padding: 32px;
         }
 
         @media (min-width: $breakpoint-tablet) {
@@ -32,44 +32,57 @@
         }
 
         @media (min-width: $breakpoint-tablet) and (max-width: 1200px) {
-            padding: 2rem 2rem 3rem 2rem;
-            margin-left: 4rem;
-            margin-right: 4rem;
+            padding: 32px 32px 48px 32px;
+            margin-left: 64px;
+            margin-right: 64px;
         }
 
         @media (min-width: 1201px) {
-            margin: auto auto -3.5rem auto;
+            margin: auto auto -56px auto;
             width: 1055px;
         }
 
         .resto-name {
             display: flex;
             align-items: center;
-            gap: 0.7rem;
-            padding-bottom: 1rem;
+            gap: 11px;
+            padding-bottom: 16px;
 
             & > h1 {
                 font-family: $font-family-secondary;
-                font-size: 1.7rem;
-                line-height: 2rem;
+                font-size: 27px;
+                line-height: 32px;
                 font-weight: 200;
             }
 
             .favorite-checkbox {
-                @include display-none;
+                display: none;
             }
 
             .favorite-label .fa-heart {
-                font-size: 1.7rem;
-                padding: 0 1rem;
+                font-size: $font-size-heart;
+                padding: 0 16px;
                 cursor: pointer;
+                transform-origin: bottom;
             }
 
-            .favorite-checkbox:checked + .favorite-label {
-                .fa-regular.fa-heart {
-                    @include bg-fill-heart;
+            @media (max-width: 1023px) {
+                    .favorite-checkbox:checked + .favorite-label {
+                        .fa-regular.fa-heart {
+                            // @include bg-fill-heart;
+                            animation: fill-bgcolor 800ms ease-in-out forwards;
+                        }
+                    }
                 }
-            }
+
+                @media (min-width: $breakpoint-desktop) {
+                    .favorite-checkbox:hover + .favorite-label {
+                        .fa-regular.fa-heart {
+                            // @include bg-fill-heart;
+                            animation: fill-bgcolor 800ms ease-in-out forwards;
+                        }
+                    }
+                }
         }
 
         @for $i from 1 through 10 {
@@ -79,9 +92,9 @@
         }
 
         .menu-category {
-            padding: 1rem 0;
+            padding: 16px 0;
             opacity: 0;
-            transform: translateY(-10rem);
+            transform: translateY(-160px);
             animation: appear 1000ms ease-in-out forwards;
 
             @media (min-width: $breakpoint-tablet) {
@@ -99,11 +112,11 @@
             }
 
             &__title {
-                font-size: 1rem;
+                font-size: 16px;
                 font-weight: $content-weight;
-                padding-bottom: 0.3rem;
+                padding-bottom: 5px;
                 opacity: 0;
-                transform: translateY(-10rem);
+                transform: translateY(-160px);
                 animation: appear 1000ms ease-in-out forwards;
 
                 &::after {
@@ -124,13 +137,13 @@
 
             .menu-item {
                 background-color: $white;
-                margin: 1rem 0;
+                margin: 16px 0;
                 border-radius: $border-radius-global;
                 height: 70px;
                 box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.15);
                 overflow: hidden;
                 opacity: 0;
-                transform: translateY(-10rem);
+                transform: translateY(-160px);
                 animation: appear 1000ms ease-in-out forwards;
 
                 @media (max-width: 1023px) {
@@ -167,7 +180,7 @@
                     cursor: pointer;
 
                     .menu-item__content {
-                        padding: 1rem 0 1rem 1rem;
+                        padding: 16px 0 16px 16px;
                         flex: 1;
                         min-width: 0;
                         display: flex;
@@ -183,20 +196,23 @@
                         }
 
                         .menu-item__title {
+                            display: block;
                             font-weight: 500;
-                            font-size: 1.08rem;
+                            font-size: 17px;
                         }
 
                         .menu-item__subtitle {
-                            font-size: 0.95rem;
+                            display: block;
+                            font-size: 15px;
+                            font-weight: 300;
                         }
                     }
 
                     .menu-item__price {
                         display: flex;
                         align-items: flex-end;
-                        padding: 0 1rem 1rem 1rem;
-                        font-size: 0.95rem;
+                        padding: 0 16px 16px 16px;
+                        font-size: 15px;
                         font-weight: 600;
                         display: flex;
                         align-items: flex-end;
@@ -206,8 +222,8 @@
 
                     .menu-item__check {
                         background-color: $tertiary;
-                        width: 1.8rem;
-                        padding: 1rem;
+                        width: 29px;
+                        padding: 16px;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -217,11 +233,11 @@
 
                         & .fa-check {
                             background-color: $white;
-                            padding: 0.2rem;
+                            padding: 3px;
                             border-radius: 50%;
                             color: $tertiary;
-                            width: 1rem;
-                            height: 1rem;
+                            width: 16px;
+                            height: 16px;
                             text-align: center;
                         }
                     }
