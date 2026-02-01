@@ -59,30 +59,54 @@
                 display: none;
             }
 
-            .favorite-label .fa-heart {
-                font-size: $font-size-heart;
-                padding: 0 16px;
-                cursor: pointer;
-                transform-origin: bottom;
+            .favorite-label {
+                position: relative;
+                display: inline-block;
+
+                .fa-heart {
+                    padding-left: 10px;
+                    font-size: $font-size-heart;
+                    cursor: pointer;
+                    position: absolute;
+                    top: -13px;
+                    transition: opacity 800ms ease-in-out, transform 500ms;
+                }
+
+                .fa-regular.fa-heart {
+                    z-index: 1;
+                }
+
+                .fa-solid.fa-heart {
+                    @include bg-fill-heart;
+                    z-index: 2;
+                    transform-origin: 65% 85%;
+                    transform: scale(0);
+                }
             }
 
             @media (max-width: 1023px) {
-                    .favorite-checkbox:checked + .favorite-label {
-                        .fa-regular.fa-heart {
-                            // @include bg-fill-heart;
-                            animation: fill-bgcolor 800ms ease-in-out forwards;
-                        }
+                .favorite-checkbox:checked + .favorite-label {
+                    .fa-regular.fa-heart {
+                        opacity: 0;
                     }
-                }
 
-                @media (min-width: $breakpoint-desktop) {
-                    .favorite-checkbox:hover + .favorite-label {
-                        .fa-regular.fa-heart {
-                            // @include bg-fill-heart;
-                            animation: fill-bgcolor 800ms ease-in-out forwards;
-                        }
+                    .fa-solid.fa-heart {
+                        transform: scale(1);
                     }
                 }
+            }
+
+            @media (min-width: $breakpoint-desktop) {
+                .favorite-checkbox:hover + .favorite-label {
+                    .fa-regular.fa-heart {
+                        opacity: 0;
+                    }
+
+                    .fa-solid.fa-heart {
+                        transform: scale(1);
+                    }
+                }
+            }
         }
 
         @for $i from 1 through 10 {
@@ -189,6 +213,7 @@
                         .menu-item__title,
                         .menu-item__subtitle {
                             white-space: nowrap;
+                            transition: all 500ms;
 
                             @media (max-width: 374px) {
                                 @include truncate;
@@ -217,7 +242,7 @@
                         display: flex;
                         align-items: flex-end;
                         transform: translateX(4em);
-                        transition: transform 300ms;
+                        transition: transform 500ms;
                     }
 
                     .menu-item__check {
@@ -228,7 +253,7 @@
                         justify-content: center;
                         align-items: center;
                         border-radius: $border-radius-right;
-                        transition: transform 300ms;
+                        transition: transform 500ms;
                         transform: translateX(4em);
 
                         & .fa-check {

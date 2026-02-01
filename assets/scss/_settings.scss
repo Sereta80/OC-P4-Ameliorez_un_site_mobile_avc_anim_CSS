@@ -60,8 +60,6 @@ $breakpoint-wide: 1440px;
 
 /* Bg color fill heart */
 @mixin bg-fill-heart {
-    font-weight: bold;
-    display: inline-block;
     background: linear-gradient($primary, $secondary);
     background-clip: text;
     -webkit-background-clip: text;

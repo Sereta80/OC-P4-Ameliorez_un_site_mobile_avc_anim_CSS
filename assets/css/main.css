@@ -18,8 +18,6 @@
   }
   to {
     transform: scale(1);
-    font-weight: bold;
-    display: inline-block;
     background: linear-gradient(#9356DC, #FF79DA);
     background-clip: text;
     -webkit-background-clip: text;
@@ -196,20 +194,44 @@ body .btn:hover {
 .resto-main-container .resto-main .resto-name .favorite-checkbox {
   display: none;
 }
+.resto-main-container .resto-main .resto-name .favorite-label {
+  position: relative;
+  display: inline-block;
+}
 .resto-main-container .resto-main .resto-name .favorite-label .fa-heart {
+  padding-left: 10px;
   font-size: 24px;
-  padding: 0 16px;
   cursor: pointer;
-  transform-origin: bottom;
+  position: absolute;
+  top: -13px;
+  transition: opacity 800ms ease-in-out, transform 500ms;
+}
+.resto-main-container .resto-main .resto-name .favorite-label .fa-regular.fa-heart {
+  z-index: 1;
+}
+.resto-main-container .resto-main .resto-name .favorite-label .fa-solid.fa-heart {
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+  transform-origin: 65% 85%;
+  transform: scale(0);
 }
 @media (max-width: 1023px) {
   .resto-main-container .resto-main .resto-name .favorite-checkbox:checked + .favorite-label .fa-regular.fa-heart {
-    animation: fill-bgcolor 800ms ease-in-out forwards;
+    opacity: 0;
+  }
+  .resto-main-container .resto-main .resto-name .favorite-checkbox:checked + .favorite-label .fa-solid.fa-heart {
+    transform: scale(1);
   }
 }
 @media (min-width: 1024px) {
   .resto-main-container .resto-main .resto-name .favorite-checkbox:hover + .favorite-label .fa-regular.fa-heart {
-    animation: fill-bgcolor 800ms ease-in-out forwards;
+    opacity: 0;
+  }
+  .resto-main-container .resto-main .resto-name .favorite-checkbox:hover + .favorite-label .fa-solid.fa-heart {
+    transform: scale(1);
   }
 }
 .resto-main-container .resto-main .menu-category:nth-of-type(1) {
@@ -381,6 +403,7 @@ body .btn:hover {
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content .menu-item__title,
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content .menu-item__subtitle {
   white-space: nowrap;
+  transition: all 500ms;
 }
 @media (max-width: 374px) {
   .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__content .menu-item__title,
@@ -408,7 +431,7 @@ body .btn:hover {
   display: flex;
   align-items: flex-end;
   transform: translateX(4em);
-  transition: transform 300ms;
+  transition: transform 500ms;
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__check {
   background-color: #99E2D0;
@@ -418,7 +441,7 @@ body .btn:hover {
   justify-content: center;
   align-items: center;
   border-radius: 0 15px 15px 0;
-  transition: transform 300ms;
+  transition: transform 500ms;
   transform: translateX(4em);
 }
 .resto-main-container .resto-main .menu-category .menu-item .check-label .menu-item__check .fa-check {
@@ -789,6 +812,7 @@ body .btn:hover {
   width: 343px;
   height: 251px;
   position: relative;
+  display: inline-block;
   background-color: #FFFFFF;
   border-radius: 15px;
 }
@@ -814,28 +838,43 @@ body .btn:hover {
   height: 175px;
   border-radius: 15px 15px 0 0;
 }
-.restaurants .resto-container .resto-card .favorite-container {
-  position: absolute;
-  right: 16px;
-  bottom: 24px;
-  font-size: 24px;
-  transition: 500ms;
-}
 .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox {
   display: none;
 }
-.restaurants .resto-container .resto-card .favorite-container .fa-regular.fa-heart {
+.restaurants .resto-container .resto-card .favorite-container .favorite-label .fa-heart {
+  font-size: 24px;
   cursor: pointer;
-  transform-origin: bottom;
+  position: absolute;
+  right: 20px;
+  bottom: 27px;
+  transition: opacity 800ms ease-in-out, transform 500ms;
+}
+.restaurants .resto-container .resto-card .favorite-container .favorite-label .fa-regular.fa-heart {
+  z-index: 1;
+}
+.restaurants .resto-container .resto-card .favorite-container .favorite-label .fa-solid.fa-heart {
+  background: linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: 2;
+  transform-origin: 50% 85%;
+  transform: scale(0);
 }
 @media (max-width: 1023px) {
   .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:checked + .favorite-label .fa-regular.fa-heart {
-    animation: fill-bgcolor 800ms ease-in-out forwards;
+    opacity: 0;
+  }
+  .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:checked + .favorite-label .fa-solid.fa-heart {
+    transform: scale(1);
   }
 }
 @media (min-width: 1024px) {
   .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:hover + .favorite-label .fa-regular.fa-heart {
-    animation: fill-bgcolor 800ms ease-in-out forwards;
+    opacity: 0;
+  }
+  .restaurants .resto-container .resto-card .favorite-container .favorite-checkbox:hover + .favorite-label .fa-solid.fa-heart {
+    transform: scale(1);
   }
 }
 .restaurants .resto-container .resto-card-content {

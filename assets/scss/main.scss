@@ -299,6 +299,7 @@
             width: 343px;
             height: 251px;
             position: relative;
+            display: inline-block;
             background-color: $white;
             border-radius: $border-radius-global;
 
@@ -323,26 +324,40 @@
             }
 
             .favorite-container {
-                position: absolute;
-                right: 16px;
-                bottom: 24px;
-                font-size: $font-size-heart;
-                transition: 500ms;
-
                 .favorite-checkbox {
                     display: none;
                 }
 
-                .fa-regular.fa-heart {
-                    cursor: pointer;
-                    transform-origin: bottom;
-                }
+                    .favorite-label {
+                        .fa-heart {
+                            font-size: $font-size-heart;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 20px;
+                            bottom: 27px;
+                            transition: opacity 800ms ease-in-out, transform 500ms;
+                        }
+
+                        .fa-regular.fa-heart {
+                            z-index: 1;
+                        }
+
+                        .fa-solid.fa-heart {
+                            @include bg-fill-heart;
+                            z-index: 2;
+                            transform-origin: 50% 85%;
+                            transform: scale(0);
+                        }
+                    }
 
                 @media (max-width: 1023px) {
                     .favorite-checkbox:checked + .favorite-label {
                         .fa-regular.fa-heart {
-                            // @include bg-fill-heart;
-                            animation: fill-bgcolor 800ms ease-in-out forwards;
+                            opacity: 0;
+                        }
+
+                        .fa-solid.fa-heart {
+                            transform: scale(1);
                         }
                     }
                 }
@@ -350,8 +365,11 @@
                 @media (min-width: $breakpoint-desktop) {
                     .favorite-checkbox:hover + .favorite-label {
                         .fa-regular.fa-heart {
-                            // @include bg-fill-heart;
-                            animation: fill-bgcolor 800ms ease-in-out forwards;
+                            opacity: 0;
+                        }
+
+                        .fa-solid.fa-heart {
+                            transform: scale(1);
                         }
                     }
                 }
