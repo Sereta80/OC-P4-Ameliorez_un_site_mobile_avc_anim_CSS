@@ -31,6 +31,10 @@
         opacity: 1;
     }
 
+    80% {
+        opacity: 1;
+    }
+
     100% {
         opacity: 0;
         visibility: hidden;
@@ -60,14 +64,19 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh; /* Gère la barre d'adresse rétractable sur mobile */
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: $white;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     z-index: 9999;
-
+    pointer-events: none; /* Empêche les clics sur le contenu de dessous pendant le loader */
     animation: fadeOut 1s 2s forwards;
 
     .loader {
@@ -92,7 +101,6 @@
             .fa-solid.fa-bell-concierge {
                 font-size: 4rem;
                 color: $bg-footer;
-
                 animation: spin-reverse 1000ms 500ms linear infinite;
             }
         }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Reset */
 * {
   margin: 0;
@@ -10,20 +11,6 @@
 /* Breakpoints */
 /* Button */
 /* Bg color fill heart */
-/* Remplissage des coeurs */
-@keyframes fill-bgcolor {
-  from {
-    transform: scale(0.1);
-    font-size: 24px;
-  }
-  to {
-    transform: scale(1);
-    background: linear-gradient(#9356DC, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
 /* Body */
 body {
   font-family: "Roboto", sans-serif;
@@ -555,6 +542,9 @@ body .btn:hover {
   0% {
     opacity: 1;
   }
+  80% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
     visibility: hidden;
@@ -579,13 +569,19 @@ body .btn:hover {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* Gère la barre d'adresse rétractable sur mobile */
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #FFFFFF;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   z-index: 9999;
+  pointer-events: none; /* Empêche les clics sur le contenu de dessous pendant le loader */
   animation: fadeOut 1s 2s forwards;
 }
 .loader-container .loader {
