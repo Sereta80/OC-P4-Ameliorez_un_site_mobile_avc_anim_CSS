@@ -562,7 +562,7 @@ body .btn:hover {
 .main-container-homepage .header-homepage,
 .main-container-homepage .main,
 .main-container-homepage .footer {
-  animation: fadeIn 1s 2.5s backwards;
+  animation: fadeIn 2s 2.5s backwards;
 }
 
 .loader-container {
