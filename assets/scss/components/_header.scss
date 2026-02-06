@@ -2,7 +2,7 @@
 
 /***** Header Homepage *****/
 .header-homepage {
-    padding: 10px;
+    padding-top: 10px;
     padding-bottom: 8px;
     display: flex;
     flex-direction: column;
@@ -19,7 +19,7 @@
     .location-search {
         background-color: $light-gray;
         padding: 20px 0;
-        width: 1440px;
+        width: 100%;
         display: flex;
         justify-content: center;
 
