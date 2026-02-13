@@ -3,7 +3,10 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat&logo=sass&logoColor=white)
 
-<img width="375" height="2237" alt="preview" src="https://github.com/user-attachments/assets/ce2e382d-7469-42c0-98fc-247da53d9919" />
+<img width="375" height="2237" alt="preview1" src="https://github.com/user-attachments/assets/62363424-9191-40ba-b794-16aae169548e" />
+<img width="375" height="1749" alt="preview2" src="https://github.com/user-attachments/assets/7abc3bdd-ba0a-4b9c-ae34-f22f361686c2" />
+
+---
 
 ***Ohmyfood*** est un site "mobile-first" qui répertorie les menus de restaurants gastronomiques. Ce projet a été réalisé dans le cadre de la formation "Intégrateur Web" d'OpenClassrooms.
 
